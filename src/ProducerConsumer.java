@@ -49,8 +49,7 @@ public class ProducerConsumer
 
     public static class PC
     {
-
-        LinkedList<Integer> list = new LinkedList<>();
+        LinkedList <Integer> list = new LinkedList<>();
         int capacity = 2;
 
         public void produce() throws InterruptedException
@@ -60,8 +59,7 @@ public class ProducerConsumer
             {
                 synchronized (this)
                 {
-
-                    while (list.size()==capacity)
+                    while (list.size() == capacity)
                         wait();
 
                     System.out.println("Producer produced-"
@@ -82,7 +80,7 @@ public class ProducerConsumer
             {
                 synchronized (this)
                 {
-                    while (list.size()==0)
+                    while (list.size() == 0)
                         wait();
 
                     int val = list.removeFirst();
